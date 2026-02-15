@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXA Digital Services - Boostez Votre Business</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1E3A5F;
+            --accent-pink: #FF1493;
+            --accent-cyan: #00D4FF;
+            --light-blue: #4A9FE8;
+            --gold: #FFD700;
+            --white: #FFFFFF;
+            --gradient-cosmos: linear-gradient(135deg, #1E3A5F 0%, #4A1B4B 50%, #8B008B 100%);
+            --gradient-pink: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2C3E50;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(30, 58, 95, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00D4FF, #1E3A5F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.6); }
+            50% { box-shadow: 0 0 60px rgba(0, 212, 255, 1); }
+        }
+
+        .logo::before {
+            content: '✎';
+            font-size: 2rem;
+            color: white;
+            transform: rotate(-45deg);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: #00D4FF;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00D4FF;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 100px;
+            padding: 5rem 5%;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            animation: rotate-bg 20s linear infinite;
+        }
+
+        @keyframes rotate-bg {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #00D4FF, #FF1493, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .trust-badge .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+        }
+
+        .trust-badge span {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, #2C5364 0%, #0F2027 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #00D4FF;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            font-style: italic;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 3rem;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.5);
+            border-color: #00D4FF;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-card .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-card .features li {
+            color: #00D4FF;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .service-card .features li::before {
+            content: '✓ ';
+            color: #FFD700;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .service-card .price {
+            font-size: 1.5rem;
+            color: #FFD700;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.7);
+        }
+
+        .cta-button.secondary {
+            background: linear-gradient(135deg, #00D4FF, #0099FF);
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #1E3A5F 0%, #4A1B4B 50%, #8B008B 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .packages::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            opacity: 0.3;
+        }
+
+        .packages-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+        }
+
+        .package-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 3rem;
+            border: 3px solid transparent;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #FF1493, #00D4FF, #FFD700);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #00D4FF;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.5);
+        }
+
+        .package-card .platform-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+        }
+
+        .package-card h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .package-options {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .package-options li {
+            padding: 1.5rem;
+            border-radius: 15px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            color: white;
+            font-weight: 600;
+        }
+
+        .package-options li:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00D4FF;
+            transform: translateX(10px);
+        }
+
+        .package-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Special Offers */
+        .special-offers {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: rgba(255, 20, 147, 0.2);
+            border-radius: 30px;
+            border: 2px solid #FF1493;
+        }
+
+        .special-offers h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .special-offers p {
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin: 1rem 0;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, #8B008B 0%, #1E3A5F 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            border-color: #00D4FF;
+        }
+
+        .feature-item .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #1E3A5F 0%, #0F2027 100%);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .contact-method:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-method .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-method h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method a {
+            color: #00D4FF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .contact-method a:hover {
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+            animation: bounce-float 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: #0F2027;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer .slogan {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #00D4FF;
+            margin-bottom: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00D4FF;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid,
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Sparkle Animation */
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="logo-text">
+                <h1>NEXA</h1>
+                <p>Digital Services</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#features">Avantages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Boostez Vos Réseaux Sociaux<br>Dès Aujourd'hui</h1>
+            <p>Abonnés • Likes • Vues<br><strong>Rapide - Sécurisé - Efficace</strong></p>
+            <div class="trust-badge">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span>Déjà +200 clients satisfaits</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Nos Services Digitaux</h2>
+        <p class="section-subtitle">Votre business, notre expertise 🚀</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Création de Logo</h3>
+                <p>Logos uniques & mémorables qui représentent parfaitement votre identité de marque</p>
+                <ul class="features">
+                    <li>Design professionnel et original</li>
+                    <li>3 concepts au choix</li>
+                    <li>Révisions illimitées</li>
+                    <li>Tous formats (PNG, SVG, AI)</li>
+                </ul>
+                <p class="price">À partir de 50$</p>
+                <button class="cta-button" onclick="contactWhatsApp('Création de Logo')">Commander</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎭</div>
+                <h3>Design de Visuels</h3>
+                <p>Affiches, flyers, bannières... Designs impactants qui captent l'attention</p>
+                <ul class="features">
+                    <li>Affiches professionnelles</li>
+                    <li>Flyers événementiels</li>
+                    <li>Posts réseaux sociaux</li>
+                    <li>Bannières publicitaires</li>
+                </ul>
+                <p class="price">À partir de 30$/design</p>
+                <button class="cta-button" onclick="contactWhatsApp('Design de Visuels')">Commander</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Gestion des Réseaux Sociaux</h3>
+                <p>Animation & publicité ciblée pour booster votre présence en ligne</p>
+                <ul class="features">
+                    <li>Création de contenu quotidien</li>
+                    <li>Community management</li>
+                    <li>Stories & Reels</li>
+                    <li>Reporting mensuel</li>
+                </ul>
+                <p class="price">À partir de 200$/mois</p>
+                <button class="cta-button" onclick="contactWhatsApp('Gestion Réseaux Sociaux')">Commander</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>Création de Vidéos</h3>
+                <p>Spots publicitaires engageants pour TikTok, Reels, YouTube</p>
+                <ul class="features">
+                    <li>Montage professionnel</li>
+                    <li>Effets spéciaux & transitions</li>
+                    <li>Sous-titres & musique</li>
+                    <li>Formats courts et longs</li>
+                </ul>
+                <p class="price">À partir de 80$/vidéo</p>
+                <button class="cta-button" onclick="contactWhatsApp('Création de Vidéos')">Commander</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📢</div>
+                <h3>Gestion Campagnes Pub</h3>
+                <p>Publicités Facebook, Google... ROI maximisé, budget optimisé</p>
+                <ul class="features">
+                    <li>Configuration complète</li>
+                    <li>Ciblage précis</li>
+                    <li>Optimisation quotidienne</li>
+                    <li>Reporting détaillé</li>
+                </ul>
+                <p class="price">À partir de 300$/campagne</p>
+                <button class="cta-button" onclick="contactWhatsApp('Campagnes Publicitaires')">Commander</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="packages-container">
+            <h2 class="section-title">Packages de Boost</h2>
+            <p class="section-subtitle">Résultats visibles rapidement 🚀</p>
+            
+            <div class="packages-grid">
+                <!-- TikTok Package -->
+                <div class="package-card">
+                    <div class="platform-icon">🎵</div>
+                    <h3>TikTok Boost</h3>
+                    <ul class="package-options">
+                        <li>
+                            <span>1K Followers</span>
+                            <span class="package-price">22$</span>
+                        </li>
+                        <li>
+                            <span>10K Vues</span>
+                            <span class="package-price">35$</span>
+                        </li>
+                        <li>
+                            <span>50K Vues</span>
+                            <span class="package-price">45$</span>
+                        </li>
+                        <li>
+                            <span>200K Vues</span>
+                            <span class="package-price">75$</span>
+                        </li>
+                    </ul>
+                    <p style="color: #FF1493; font-weight: 700; margin: 1rem 0;">⚡ Livraison rapide</p>
+                    <button class="cta-button" onclick="contactWhatsApp('TikTok Package')">Choisir</button>
+                </div>
+
+                <!-- Instagram Package -->
+                <div class="package-card">
+                    <div class="platform-icon">📸</div>
+                    <h3>Instagram Boost</h3>
+                    <ul class="package-options">
+                        <li>
+                            <span>1K Followers</span>
+                            <span class="package-price">25$</span>
+                        </li>
+                        <li>
+                            <span>10K Vues Reels</span>
+                            <span class="package-price">40$</span>
+                        </li>
+                        <li>
+                            <span>5K Likes</span>
+                            <span class="package-price">30$</span>
+                        </li>
+                        <li>
+                            <span>Package Complet</span>
+                            <span class="package-price">80$</span>
+                        </li>
+                    </ul>
+                    <p style="color: #FF1493; font-weight: 700; margin: 1rem 0;">⚡ Boost immédiat</p>
+                    <button class="cta-button" onclick="contactWhatsApp('Instagram Package')">Choisir</button>
+                </div>
+
+                <!-- Facebook Package -->
+                <div class="package-card">
+                    <div class="platform-icon">👍</div>
+                    <h3>Facebook Boost</h3>
+                    <ul class="package-options">
+                        <li>
+                            <span>1K Followers</span>
+                            <span class="package-price">20$</span>
+                        </li>
+                        <li>
+                            <span>5K Likes</span>
+                            <span class="package-price">28$</span>
+                        </li>
+                        <li>
+                            <span>10K Portée</span>
+                            <span class="package-price">40$</span>
+                        </li>
+                        <li>
+                            <span>Package Complet</span>
+                            <span class="package-price">75$</span>
+                        </li>
+                    </ul>
+                    <p style="color: #FF1493; font-weight: 700; margin: 1rem 0;">⚡ Livraison rapide</p>
+                    <button class="cta-button" onclick="contactWhatsApp('Facebook Package')">Choisir</button>
+                </div>
+
+                <!-- YouTube Package -->
+                <div class="package-card">
+                    <div class="platform-icon">▶️</div>
+                    <h3>YouTube Boost</h3>
+                    <ul class="package-options">
+                        <li>
+                            <span>1K Abonnés</span>
+                            <span class="package-price">40$</span>
+                        </li>
+                        <li>
+                            <span>5K Vues</span>
+                            <span class="package-price">35$</span>
+                        </li>
+                        <li>
+                            <span>4000h Watch Time</span>
+                            <span class="package-price">90$</span>
+                        </li>
+                        <li>
+                            <span>Pack Monétisation</span>
+                            <span class="package-price">150$</span>
+                        </li>
+                    </ul>
+                    <p style="color: #FF1493; font-weight: 700; margin: 1rem 0;">⚡ Livraison rapide</p>
+                    <button class="cta-button" onclick="contactWhatsApp('YouTube Package')">Choisir</button>
+                </div>
+
+                <!-- Telegram Package -->
+                <div class="package-card">
+                    <div class="platform-icon">✈️</div>
+                    <h3>Telegram Boost</h3>
+                    <ul class="package-options">
+                        <li>
+                            <span>1K Abonnés</span>
+                            <span class="package-price">30$</span>
+                        </li>
+                        <li>
+                            <span>5K Vues</span>
+                            <span class="package-price">25$</span>
+                        </li>
+                        <li>
+                            <span>10K Membres</span>
+                            <span class="package-price">80$</span>
+                        </li>
+                        <li>
+                            <span>Package Premium</span>
+                            <span class="package-price">120$</span>
+                        </li>
+                    </ul>
+                    <p style="color: #FF1493; font-weight: 700; margin: 1rem 0;">⚡ Boost immédiat</p>
+                    <button class="cta-button" onclick="contactWhatsApp('Telegram Package')">Choisir</button>
+                </div>
+            </div>
+
+            <div class="special-offers">
+                <h3>🎁 Offres Spéciales</h3>
+                <p>💎 Création de comptes TikTok monétisés : <strong>50$</strong></p>
+                <p>⚡ Service sécurisé & fiable - Résultats garantis</p>
+                <p>🚀 Résultats visibles rapidement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Pourquoi Choisir NEXA ?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="icon">⚡</div>
+                <h3>Rapide</h3>
+                <p>Livraison express sous 24-48h pour la plupart de nos services</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🔒</div>
+                <h3>Sécurisé & Fiable</h3>
+                <p>Paiements protégés et confidentialité totale garantie</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">✅</div>
+                <h3>Résultats Garantis</h3>
+                <p>Satisfaction garantie ou remboursement intégral</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">💰</div>
+                <h3>Prix Abordables</h3>
+                <p>Meilleur rapport qualité-prix du marché africain</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contactez-Nous</h2>
+        <p class="section-subtitle">Écris-nous maintenant sur WhatsApp</p>
+        
+        <div class="contact-info">
+            <div class="contact-method">
+                <div class="icon">📱</div>
+                <h3>WhatsApp Togo</h3>
+                <a href="https://wa.me/22896538686?text=Bonjour%20NEXA%2C%20je%20suis%20intéressé%20par%20vos%20services" target="_blank">
+                    +228 96 53 86 86
+                </a>
+            </div>
+            
+            <div class="contact-method">
+                <div class="icon">📱</div>
+                <h3>WhatsApp Niger</h3>
+                <a href="https://wa.me/22788084682?text=Bonjour%20NEXA%2C%20je%20suis%20intéressé%20par%20vos%20services" target="_blank">
+                    +227 88 08 46 82
+                </a>
+            </div>
+            
+            <div class="contact-method">
+                <div class="icon">📱</div>
+                <h3>WhatsApp Niger 2</h3>
+                <a href="https://wa.me/22788707002?text=Bonjour%20NEXA%2C%20je%20suis%20intéressé%20par%20vos%20services" target="_blank">
+                    +227 88 70 70 02
+                </a>
+            </div>
+            
+            <div class="contact-method">
+                <div class="icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:nexadigitalservice@gmail.com">
+                    nexadigitalservice@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo-container" style="justify-content: center; margin-bottom: 2rem;">
+            <div class="logo"></div>
+            <div class="logo-text">
+                <h1>NEXA</h1>
+                <p>Digital Services</p>
+            </div>
+        </div>
+        <p class="slogan">Votre visibilité, notre mission 🚀</p>
+        <p>Résultats garantis, prix abordables !</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">© 2026 NEXA Digital Services. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Conditions Générales</a>
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">FAQ</a>
+            <a href="#">À Propos</a>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/22896538686?text=Bonjour%20NEXA%2C%20je%20suis%20intéressé%20par%20vos%20services" 
+       class="whatsapp-float" 
+       target="_blank"
+       title="Contactez-nous sur WhatsApp">
+        💬
+    </a>
+
+    <script>
+        // Contact WhatsApp function
+        function contactWhatsApp(service) {
+            const phones = [
+                '22896538686'
+            ];
+            const randomPhone = phones[Math.floor(Math.random() * phones.length)];
+            const message = `Bonjour NEXA, je suis intéressé par: ${service}`;
+            window.open(`https://wa.me/${randomPhone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .package-card, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Add sparkles dynamically
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            document.querySelector('.hero').appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+
+        setInterval(createSparkle, 300);
+    </script>
+</body>
+</html>
